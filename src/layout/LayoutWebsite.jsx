@@ -10,7 +10,7 @@ export default function LayoutWebsite() {
           <Link to="/" className="nav-link">Trang chủ</Link>
         </li>
         <li className="nav-item">
-          <Link to="/product" className="nav-link">Sản phẩm</Link>
+          <Link to="/products" className="nav-link">Sản phẩm</Link>
         </li>
         <li className="nav-item">
           <Link to="/category" className="nav-link">Danh muc</Link>
@@ -26,9 +26,11 @@ export default function LayoutWebsite() {
           </li>
         </ul>
       </nav>
+      <div className="container">
       <Outlet />
-
+      </div>
     </div>
+    
     
   );
 }
