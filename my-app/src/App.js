@@ -1,84 +1,95 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import ShowList from './show/ShowList';
-import HomeList from './show/Home';
-import Data from './data/Data';
 import LayoutAdmin from "./layout/LayoutAdmin";
 import LayoutWebsite from "./layout/LayoutWebsite";
-import { useState } from "react";
-// import Products from "./Products";
-// import ShowName from "./Showname";
 import "./index.css";
+import IndexProduct from "./admin/IndexProduct";
+import ProductsList from "./show/Products";
+import ProductDetail from "./show/ProductDetail";
+import EditProduct from "./admin/EditProduct";
+import { create, list, update } from "./api/productAPI";
+import { updatecate } from "./api/categoryAPI";
+import { useEffect, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import  'react-toastify/dist/ReactToastify.css';
+import Home from "./show/Home";
+import Signup from "./show/Signup";
+import Signin from "./show/Signin"
+import Category from "./admin/category/Category";
+import AddCategory from "./admin/category/AddCategory";
+import EditCategory from "./admin/category/EditCategory";
+import AddProduct from "./admin/AddProduct";
+
+
+
+
 
 export default function App() {
-  
+  const [data, setData] = useState([]);
+  const [products, setProducts] = useState([]);
+  const [category, setCategory] = useState([]);
 
-  const [data, SetData] = useState(Data);
-  const [status, setStatus] = useState(false);
-  
-  //removedHandles
-  const removedHandles = (id) =>{
-      const newData = data.filter(data => data.id !== id)
-      SetData(newData)
-  }
+  useEffect(() => {
+    list().then((response) => setProducts(response.data));
+  }, []);
+  const onHandleUpdate = (product) => {
+
+    update(product).then(() => {
+      const newProduct = data.map(item => item.id === product.id ? product : item)
+      toast.success("Đã cập nhật sản phẩm thành công");
+      setData(newProduct);
+    })
+  };
+  const onHandleAdd = (product) => {
+    const fakeProduct = { ...product };
+    console.log("Add thành công",fakeProduct);
+    create(fakeProduct).then((response) =>{
+      setProducts([...data, response.data])
+    })
+    
+  };
+  const onHandleUpdateCate = (category) => {
+
+    updatecate(category).then(() => {
+      const newCategory = data.map(item => item.id === category.id ? category : item)
+      toast.success("Đã cập nhật danh mục thành công");
+      setCategory(newCategory);
+    })
+  };
 
   return (
     <div className="App">
+       <ToastContainer/>
        <BrowserRouter>
+       
         <Routes>
-          {/* GIao diện dành cho website */}
+          
           <Route path="/" element={<LayoutWebsite />}>
-            {/* Mặc định khi truy cập / thì màn hình render ra home */}
-            <Route index element={
-          <div class="container">
-            Home
-            <tbody>
-                     <HomeList data={data}/>
-                   </tbody>
-          </div>
-          } />
-            {/* khi truy cập /product thì màn hình render ra component Product */}
+           
+            <Route index element={<Home/>}/>
+            
             <Route
-              path="product"
-              element={<div> san pham</div>
-              }
+              path="products" element={<ProductsList />}
             />
+            <Route path="products/:id" element={<ProductDetail/>} />
+            <Route path="signin" element={<Signin />} />
+            <Route path="signup" element={<Signup />} />
           </Route>
-
-          {/* Giao diện dành cho Admin */}
-          <Route path="admin/*" element={<LayoutAdmin />}>
-            <Route index element={<Navigate to="dashboard" />} />
-            <Route path="dashboard" element={<div>Dashboard Product</div>} />
-            <Route path="product" element={
-               <div className="App">
-               <header>
-                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                  
+          
          
-                   <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    
-                       <button onClick={() => setStatus(!status)} className={status === true ? 'btn btn-outline-danger' : 'btn btn-outline-success'} type="submit">{status === true ? 'Close' : 'Open'}</button>
-                   </div>
-                 </nav>
-               </header>
-               {status ? <main className="container">
-                 <h2 className="mt-4 mb-2">Danh sách</h2>
-                 <table className="table table-bordered">
-                   <thead>
-                     <tr>
-                       <th scope="col">#</th>
-                       <th scope="col">Name</th>
-                       <th scope="col">Image</th>
-                       <th scope="col"></th>
-                       
-                     </tr>
-                   </thead>
-                   <tbody>
-                     <ShowList data={data} removed={removedHandles} />
-                   </tbody>
-                 </table>
-               </main> : null}
-             </div>
-            } />
+          <Route path="admin/*" element={<LayoutAdmin />}>
+            <Route index element={<Navigate to="products" />} />
+            <Route path="products" element={<IndexProduct />} />
+            <Route path="products/add" element={<AddProduct onAdd={onHandleAdd} />}/>
+            <Route
+              path="products/:id/edit"
+              element={<EditProduct onUpdate={onHandleUpdate}/>}
+            />
+            <Route path="category" element={<Category/>} />
+            <Route path="category/add" element={<AddCategory/>} />
+            <Route
+              path="category/:id/edit"
+              element={<EditCategory onUpdate={onHandleUpdateCate}/>}
+            />
           </Route>
         </Routes>
       </BrowserRouter>

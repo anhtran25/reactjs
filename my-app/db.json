@@ -1,0 +1,156 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "products": [
+    {
+      "id": 1,
+      "name": "Bánh Bao thịt",
+      "image": "https://cdn.tgdd.vn/Files/2019/11/18/1219773/cach-lam-banh-bao-don-gian-tai-nha-bang-bot-pha-san-ngon-hon-ca-ngoai-tiem-202107302159326616.jpg",
+      "desc": "Banh bao nhân thịt trứng cút ",
+      "cate_id": 1,
+      "price": 15000
+    },
+    {
+      "id": 2,
+      "name": "Bánh quy bơ",
+      "image": "https://cdn.tgdd.vn/2021/05/CookProduct/2cachlambanhquyhinhthu(1)-1200x676.jpg",
+      "desc": "Bánh quy hương lúa mạch pha trộn sữa bò tuoi trnag trại bò Ba vì ",
+      "cate_id": 1,
+      "price": 15000
+    },
+    {
+      "id": 3,
+      "name": "Kẹo Dẻo",
+      "image": "https://ifoodvietnam.com/wp-content/uploads/2020/04/%C4%91%C3%A3-ch%E1%BB%89nh-1.png",
+      "desc": "Kẹo dẻo hải hà, hương vị chất liệu tự nhiên từ hoa quả",
+      "price": 15000,
+      "cate_id": 1
+    },
+    {
+      "id": 6,
+      "name": "Trà Sữa",
+      "image": "https://www.bartender.edu.vn/wp-content/uploads/2015/11/tra-sua-truyen-thong.jpg",
+      "desc": "Trà sữa tran châu đường đen nhiều sữa full toping ",
+      "price": 15000,
+      "cate_id": 1
+    },
+    {
+      "name": "Bánh Mì Bò BBQ",
+      "image": "https://banhmihanoi.net/wp-content/uploads/2019/07/maxresdefault.jpg",
+      "desc": "Banh Mi BBQ đậm đà hương vị bò nướng ",
+      "price": "15000",
+      "cate_id": 1,
+      "id": 7
+    },
+    {
+      "name": "Pepsi non",
+      "image": "https://www.foodnk.com/wp-content/uploads/2013/06/10-san-pham-ban-chay-nhat-cua-pepsi-3-min.jpg",
+      "desc": "Pessi đậm đà sảng khoái mùa hè nóng bức",
+      "price": "20000",
+      "cate_id": "3",
+      "id": 8
+    },
+    {
+      "name": "Bún chả giò",
+      "image": "https://cdn.daynauan.info.vn/wp-content/uploads/2018/12/bun-cha-gio.jpg",
+      "desc": "Từng cuốn chả giò giòn rụm, thơm ngon được ăn kèm với bún tươi, rau sống hòa cùng hương vị nước mắm đậm đà ngon tuyệt",
+      "price": "35000",
+      "cate_id": 1,
+      "id": 9
+    },
+    {
+      "name": "Bánh trứng nướng",
+      "image": "https://i.ytimg.com/vi/Z6-OSoH5cEc/maxresdefault.jpg",
+      "desc": "Bánh trứng gà nướng kem tươi. Thơm ngon béo ngậy",
+      "price": "28000",
+      "cate_id": 1,
+      "id": 10
+    },
+    {
+      "name": "Bánh đậu xan",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Banh-Dau-Xanh.jpg",
+      "desc": "Bánh đậu xanh này có hương vị thơm, ngon, thanh đạm",
+      "price": "25000",
+      "cate_id": 1,
+      "id": 11
+    },
+    {
+      "name": "Bánh quy cosy",
+      "image": "https://cf.shopee.vn/file/a85bf1ab77c74a4090f976d7b7a5c233",
+      "desc": "Bánh quy sữa Cosy Marie - Gói 432g có độ giòn xốp và thơm mùi sữa do sử dụng loại bột sữa và hương sữa",
+      "price": "22000",
+      "cate_id": 1,
+      "id": 12
+    },
+    {
+      "name": "Nho khô đen",
+      "image": "https://hoaquafuji.com/storage/app/media/nho-kh%C3%B4-den-hay-vang-tot-hon-00-min.png",
+      "desc": "Thơm ngon với hương vị ngọt ngào và mềm dẻo. Nho khô được làm bằng cách phơi khô nho không hạt dưới ánh mặt trời hoặc trong máy nước khử trùng",
+      "price": "26000",
+      "cate_id": 1,
+      "id": 13
+    },
+    {
+      "name": "Kẹo lạc Hải Dương",
+      "image": "https://dammenaunuong.com/wp-content/uploads/2019/10/k%E1%BA%B9o-l%E1%BA%A1c-v%C3%A0-tr%C3%A0.jpg",
+      "desc": "Kẹo lạc vừng  được sản xuất theo dây chuyền đẩm bảo vệ sinh an toàn thực phẩm. Kẹo được sản xuất từ những hạt lạc ngon nhất kết hợp với đường, vừng trắng tạo ra hương vị rất đặc trưng",
+      "price": "11000",
+      "cate_id": 2,
+      "id": 14
+    },
+    {
+      "name": "Bánh Giầy giò",
+      "image": "http://res.cloudinary.com/vodinh/image/upload/v1637743360/ombec0yy0fn6cutxxmzx.jpg",
+      "price": "45000",
+      "cate_id": "1",
+      "desc": "Bánh giầy chất liệu lúa nếp trắng tinh khôi",
+      "id": 15
+    }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "cate_name": "Bánh"
+    },
+    {
+      "cate_name": "Kẹo test",
+      "id": 2
+    },
+    {
+      "cate_name": "Nước giải khát",
+      "id": 3
+    }
+  ],
+  "users": [
+    {
+      "email": "maihoanganh2511@gmail.com",
+      "password": "$2a$10$bLfaLdrpbQcE.th.pku2v.Q.Q5zQfcsUsTptHTlzDC5uz1yFQ9BIe",
+      "id": 1
+    },
+    {
+      "email": "coi123@gmail.com",
+      "password": "$2a$10$eb4Kdzdq3HNNqrPKc19HT.iDHY8brB/Wrn6ANF0dud0NIMwewdioG",
+      "id": 2
+    },
+    {
+      "email": "h@gmail.com",
+      "password": "$2a$10$zKhL36uMQCgJW/LaxXQzceEMG9rsPj0tOmRZQ1UjnZ6jFuaEQf28K",
+      "id": 3
+    }
+  ]
+}
