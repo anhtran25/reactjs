@@ -1,74 +1,42 @@
 import { Link,Outlet } from "react-router-dom";
+import "./adLayout.css";
 
 
 export default function LayoutAdmin() {
   return (
-    // <div className="container-fluid">
-    //   <nav className="navbar navbar-expand-lg navbar-light bg-light">
-    //   <ul className="navbar-nav me-auto mb-2 mb-lg-0" >
-    //     <li className="nav-item">
-    //       <Link to="/product" className="nav-link">Quản lí Admin</Link>
-    //     </li>
-
-    //   </ul>
-     
-    //   </nav>
-    //   <div className="contentt">
-    //   <Outlet />
-    //   </div>
-    // </div>
-    
-    <div id="pcoded" class="pcoded">
-        <div class="pcoded-overlay-box"></div>
-        <div class="pcoded-container navbar-wrapper">
-            <nav class="navbar header-navbar pcoded-header">
-                <div class="navbar-wrapper">
-                    <div class="navbar-logo">
-                        
-                    <div class="main-body">
-                                <h2>Chào mừng bạn đên với trang quản lí</h2>
-                            </div>
-                        <a class="mobile-options waves-effect waves-light">
-                            <i class="ti-more"></i>
-                        </a>
-                    </div>
-                    
+    <div className="pcoded">
+       
+            
+                <div className="navbar-wrapper">
+                        <div className="main-body">
+                                    <h2 className="TitltieAd">Chào mừng bạn đến với trang quản lí</h2>
+                        </div>      
                 </div>
-            </nav>
-
-            <div class="pcoded-main-container">
-                <div class="pcoded-wrapper">
-                    <nav class="pcoded-navbar">
-                        <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
-                        <div class="pcoded-inner-navbar main-menu">           
-                            <div class="pcoded-navigation-label">V1</div>
-                            <ul class="pcoded-item pcoded-left-item">
-                                <li class="pcoded-hasmenu">
-                                    
-                                    <li className="nav-item">
-                                      <Link to="/product" className="nav-link">Quản lí Sản Phẩm</Link>
-                                    </li>
-                                </li>
-                            </ul>
-
-
-                        </div>
-                    </nav>
-                    <div class="pcoded-content">
-                        
               
-                        
-                        <div class="pcoded-inner-content">
-                            
-                            
+            <div className="pcoded-main-container">
+                          <div className="navb">                       
+                            <ul className="pcoded-item pcoded-left-item">
+                                    <li className="nav-item">
+                                      <Link to="/admin" ><h3>Quản lí Sản Phẩm</h3></Link>
+                                    </li>
+                                    <li className="nav-item">
+                                      <Link to="/admin/category" ><h3>Quản lí Danh mục</h3></Link>
+                                    </li>
+                                    {/* <li className="nav-item">
+                                      <Link to="#" ><h3>Quản User</h3></Link>
+                                    </li> */}
+                                
+                            </ul>
+                          </div> 
+                        <div class="pcoded-inner-content">    
                                <div className="contentt">
                                   <Outlet />    
-                                  </div>
+                                </div>
                         </div>
-                    </div>
-                    </div>
-                    </div>
-                    </div>
-                    </div>
+                    
+              </div>
+                    
+    </div>
+                    
   );
 }

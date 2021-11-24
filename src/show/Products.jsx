@@ -1,9 +1,7 @@
 
-// import Data from '../data/Data';
 import { Link } from 'react-router-dom';
 import {useEffect, useState} from "react";
-// import "./asset/home.css";
-import { list, remove, update } from "../api/productAPI";
+import { list, remove } from "../api/productAPI";
 
 
 const ProductsList = () => {
@@ -24,18 +22,23 @@ const ProductsList = () => {
     products.map(data => {
        
           return (
+
            
-              <div class="card" key={data.id}>
-                <img width={200} height={150} class="img" src={data.image}/>
-                <div class="card-body">
-                  <h5 class="card-title">{data.name}</h5>
-                  <p class="card-text">Price: {data.price} <span> đ</span></p>                 
-                <Link to="/details">
-                <a href="#" class="btn btn-primary">Chi tiết SP</a>
-                </Link>
-  
-                </div>
+              
+      <div className="py-5">
+        <div className="containerr">
+          
+          <div className="card" key={data.id}>
+              <img width={200} height={150} className="img" src={data.image}/>
+              <div className="card-body">
+                <h5 className="card-title"><Link to={`${data.id}`}>{data.name}</Link></h5>
+                <p className="card-text">Price: {data.price} <span> đ</span></p> 
+                            
               </div>
+            </div>
+          
+        </div>
+      </div>
               
           )
           

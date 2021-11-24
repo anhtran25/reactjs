@@ -5,7 +5,7 @@ export const create = (products) => {
   return instance.post(url, products);
 };
 export const list = () => {
-  const url = "/products";
+  const url = "/products?_sort=id&_order=desc";
   return instance.get(url);
 };
 export const read = (id) => {
@@ -18,8 +18,16 @@ export const remove = (id) => {
 };
 export const update = (products) => {
   const url = "/products/" + products.id;
-  return instance.post(url, products);
+  return instance.patch(url, products);
 };
+
+
+
+
+
+
+
+
 // GET /product => Hien thi danh sach
 // GET /product/:id => Chi tiet san pham
 // POST /product => Them san pham
