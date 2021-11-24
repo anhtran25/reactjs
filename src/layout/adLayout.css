@@ -1,0 +1,14 @@
+.pcoded-main-container{
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 30px;
+    background-color: rgb(170, 170, 175);
+}
+.pcoded-inner-content{
+    margin-left: 300px;
+}
+.navb{
+    width: 300px;
+    border-right: solid black;
+}
